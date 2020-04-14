@@ -1,0 +1,14 @@
+.fl_right {
+  float: right;
+}
+.rounded_box {
+  border-radius: 20px;
+}
+.authr_style {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.left{
+  float: left;
+}
