@@ -9,6 +9,12 @@
   width: 50px;
   border-radius: 50%;
 }
-.left{
+.left {
   float: left;
+}
+.cust_anime {
+  transition: 1s;
+}
+.cust_anime:hover {
+  transform: scale(1.1);
 }
