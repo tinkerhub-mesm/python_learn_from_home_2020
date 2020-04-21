@@ -1,0 +1,54 @@
+<!--
+    This website is design and created by TinkerHub Mesm
+    for the python learn from pratical blog creation section
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+    <!--this is the dashboard body-->
+    <div class="row" style="padding: 50px;">
+        <div class="col-lg-2">
+            <nav class="nav flex-column bg-light">
+                <li class="nav-item">
+                    <a class="nav-link active" href="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="">Logout</a>
+                </li>
+            </nav>
+        </div>
+        <div class="col-lg-10">
+
+            <div style="display: flow-root;">
+                <a href="" class="btn btn-primary fl_right">Add</a>
+            </div>
+         {% for blog in blog %}
+                <div style="padding:10px;">
+              <div class="container" style="padding-bottom: 50px; padding-top: 10px; border-radius: 10px;border: 1px solid gray;">
+                <div class="left">
+                    {{blog.title}}
+                </div>
+                <button type="submit" class="btn btn-danger fl_right">Delete</button>
+                <a href=""class="btn btn-primary fl_right">Update</a>
+              </div>
+            </div>  
+         {% endfor %}
+         
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

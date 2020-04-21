@@ -1,1 +1,49 @@
-<h1>Hi welcome to {{ name }} blog</h1>
+{% load static %}
+<!--
+    This website is design and created by TinkerHub Mesm
+    for the python learn from pratical blog creation section
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static '/assets/css/main.css'%}">
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>BLOCK</h1>
+        <p>This is our blog</p>
+    </div>
+
+    <!-- *this is bootstrap card-->
+   {% for blog in blog %}
+        <div class="container cust_anime" style="margin-bottom: 50px;">
+        <div class="card">
+            <div class="card-header">
+                {{ blog.title }}
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    {{ blog.snippet}}
+                </p>
+            </div>
+            <div class="card-footer">
+                <h6> {{ blog.date }}</h6>
+                <a href="/blog/{{ blog.slug }}/" class=" btn btn-primary fl_right rounded_box">View more</a>
+            </div>
+        </div>
+      </div>
+   {% endfor %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
