@@ -23,14 +23,14 @@
                     <a class="nav-link active" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="">Logout</a>
+                    <a class="nav-link active" href="logout">Logout</a>
                 </li>
             </nav>
         </div>
         <div class="col-lg-10">
 
             <div style="display: flow-root;">
-                <a href="" class="btn btn-primary fl_right">Add</a>
+                <a href="/dashboard/add" class="btn btn-primary fl_right">Add</a>
             </div>
          {% for blog in blog %}
                 <div style="padding:10px;">
@@ -38,7 +38,12 @@
                 <div class="left">
                     {{blog.title}}
                 </div>
-                <button type="submit" class="btn btn-danger fl_right">Delete</button>
+                <form action="delete" method="POST">
+                    {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ blog.id}}">
+                        <button type="submit" class="btn btn-danger fl_right">Delete</button>
+                </form>
+
                 <a href=""class="btn btn-primary fl_right">Update</a>
               </div>
             </div>  
